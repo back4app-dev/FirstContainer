@@ -7,5 +7,5 @@ app.use('/', (req, res) => {
 });
 
 app.listen(3333, () => {
-  
+  console.log('listening at http://localhost:3333');
 });
