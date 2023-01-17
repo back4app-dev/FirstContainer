@@ -6,5 +6,4 @@ RUN apk add php
 RUN apk add mysql mysql-client
 RUN apk add openrc --no-cache
 
-RUN rc-service apache2 start
 EXPOSE 80
