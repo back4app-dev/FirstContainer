@@ -5,4 +5,5 @@ RUN apk add apache2
 RUN apk add php
 RUN apk add mysql mysql-client
 
+RUN rc-service apache2 start
 EXPOSE 80
