@@ -1,6 +1,6 @@
 FROM ubuntu:latest
-RUN  apt-get update \
-  && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    apache2 \
-    mysql-server \
-    php7.0 
+RUN  apt-get update 
+RUN apt-get install -y apache2
+RUN apt-get install -y mysql-server
+RUN apt-get install -y php7.0
+RUN apt-get install -y phpmyadmin
