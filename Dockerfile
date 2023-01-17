@@ -2,4 +2,4 @@ FROM ubuntu
 RUN apt-get update
 RUN apt-get install -y nginx
 RUN service nginx start
-EXPOSE 443
+EXPOSE 80
