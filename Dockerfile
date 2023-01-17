@@ -4,6 +4,7 @@ RUN apk update
 RUN apk add apache2
 RUN apk add php
 RUN apk add mysql mysql-client
+RUN apk add openrc --no-cache
 
 RUN rc-service apache2 start
 EXPOSE 80
