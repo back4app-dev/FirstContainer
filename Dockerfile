@@ -1,6 +1,7 @@
-FROM ubuntu:latest
-RUN  apt-get update 
-RUN apt-get install -y apache2
-RUN apt-get install -y mysql-server-7.0
-RUN apt-get install -y php7.0
-RUN apt-get install -y phpmyadmin
+FROM alpine
+
+RUN apk update
+RUN apk add apache2
+RUN apk add php7 php7-fpm php7-opcache
+RUN apk add php7-gd php7-mysqli php7-zlib php7-curl
+RUN apk add mysql mysql-client
