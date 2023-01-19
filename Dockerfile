@@ -1,11 +1,16 @@
 FROM ubuntu:latest
-RUN apt-get update 
-RUN apt-get -y install apache2 
-RUN apt-get -y install apache2-utils 
-RUN ufw allow 'Apache Full'
+
+# Update the repository sources list
+RUN apt-get update
+
+# Install and run apache
+RUN apt-get -y install apache2 && apt-get clean
+
+#ENTRYPOINT ["/usr/sbin/apache2", "-k", "start"]
+
+#ENV APACHE_RUN_USER www-data
+#ENV APACHE_RUN_GROUP www-data
+#ENV APACHE_LOG_DIR /var/log/apache2
 
 EXPOSE 80
-
-CMD ["systemctl", "start", "apache2"]
-
-#CMD [“apache2ctl”, “-D”, “FOREGROUND”]
+CMD apachectl -D FOREGROUND
