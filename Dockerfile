@@ -1,4 +1,4 @@
-FROM ubuntu latest
+FROM ubuntu:latest
 RUN apt-get update 
 RUN apt-get -y install apache2 
 RUN apt-get -y install apache2-utils 
