@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive
+RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC
 RUN apt-get -y install apache2
 RUN apt-get -y install php7.0
 RUN apt-get -y install libapache2-mod-php
