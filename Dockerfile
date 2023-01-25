@@ -6,6 +6,7 @@ RUN mkdir /root/app
 WORKDIR /root/app
 
 COPY * /root/app/
+RUN ls -lah /root/app
 
 RUN npm install 
 
