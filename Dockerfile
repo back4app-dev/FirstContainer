@@ -1,9 +1,14 @@
 FROM node:latest
 
 RUN npm install -g create-react-app express
-RUN npm cache clean --force
-RUN npx create-react-app back4app
+
+RUN mkdir /root/app
+WORKDIR /root/app
+
+COPY * /root/app/
+
+RUN npm install 
 
 EXPOSE 3000
 
-CMD cd back4app && npm start
+CMD npm start
