@@ -9,6 +9,6 @@ RUN mkdir /root/app
 WORKDIR /root/app
 
 RUN create-react-app back4app-app
-RUN npm start
+RUN cd /root/app/back4app-app && npm start
 
 EXPOSE 3000
