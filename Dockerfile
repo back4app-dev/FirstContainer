@@ -6,10 +6,10 @@ RUN apt-get -y install npm
 RUN npm install -g express
 RUN npm install -g create-react-app
 
-RUN mkdir /root/app
-WORKDIR /root/app
+#RUN mkdir /root/app
+#WORKDIR /root/app
 
-RUN create-react-app tecmint-app
-RUN npm start
+#RUN create-react-app back4app-app
+#RUN npm start
 
-EXPOSE 3000
+#EXPOSE 3000
