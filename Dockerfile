@@ -2,7 +2,8 @@ FROM ubuntu:latest
 
 RUN apt-get update
 RUN apt-get -y install nodejs
-RUN apt-get -y install npm
+RUN node --version
+RUN npm --version
 #RUN npm install -g express
 #RUN npm install -g create-react-app
 
