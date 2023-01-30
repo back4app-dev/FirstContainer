@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM node:latest
 
 RUN mkdir -p  -- /root/app/src /root/app/public
 WORKDIR /root/app
