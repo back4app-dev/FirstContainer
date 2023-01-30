@@ -9,4 +9,6 @@ COPY /public/* /root/app/public
 
 RUN ls -R /root/app/
 
+RUN npm install --production
+
 EXPOSE 3000
