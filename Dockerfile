@@ -1,11 +1,11 @@
-FROM ubuntu:latest
+FROM node:latest
 
-RUN apt-get update
-RUN apt-get -y install nginx
+RUN mkdir /root/app
+WORKDIR /root/app
+COPY . /root/app/
 
-COPY ./build/* /var/www/html/
-RUN ls -R /var/www/html/
+RUN npm install -g serve
 
-EXPOSE 80
+EXPOSE 3000
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD serve -s build
