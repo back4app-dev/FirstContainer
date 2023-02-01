@@ -1,4 +1,6 @@
-FROM node:latest
+FROM alpine:latest
+
+RUN apk add --update nodejs nodejs-npm
 
 RUN mkdir /root/app/
 WORKDIR /root/app/
