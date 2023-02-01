@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 RUN apk update
-RUN apk add nodejs nodejs-npm
+RUN apk add nodejs
 
 RUN mkdir /root/app/
 WORKDIR /root/app/
