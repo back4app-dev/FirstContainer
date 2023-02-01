@@ -1,13 +1,22 @@
-FROM alpine:latest
+FROM node:lts-alpine
 
-RUN apk update
-RUN apk add nodejs npm
+# install simple http server for serving static content
+RUN npm install -g http-server
 
-RUN mkdir /root/app/
-WORKDIR /root/app/
-COPY . ./
-RUN NODE_ENV=production npm install && npm run build
+# make the 'app' folder the current working directory
+WORKDIR /app
 
-EXPOSE 3000
+# copy both 'package.json' and 'package-lock.json' (if available)
+COPY package*.json ./
 
-CMD ["npm", "run", "start"]
+# install project dependencies
+RUN npm install
+
+# copy project files and folders to the current working directory (i.e. 'app' folder)
+COPY . .
+
+# build app for production with minification
+RUN npm run build
+
+EXPOSE 8080
+CMD [ "http-server", "dist" ]
