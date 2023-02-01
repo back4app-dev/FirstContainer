@@ -3,8 +3,7 @@ FROM node:latest
 RUN mkdir /root/app/
 WORKDIR /root/app/
 COPY . ./
-RUN npm install
-COPY . .
+RUN NODE_ENV=production npm install && npm run build
 
 EXPOSE 3000
 
