@@ -1,19 +1,34 @@
-FROM node:lts-alpine
+# Install Operating system and dependencies
+FROM ubuntu:20.04
 
-# install simple http server for serving static content
-RUN npm -y -g install serve
+RUN apt-get update 
+RUN apt-get install -y curl git wget unzip libgconf-2-4 gdb libstdc++6 libglu1-mesa fonts-droid-fallback lib32stdc++6 python3
+RUN apt-get clean
 
-# make the 'app' folder the current working directory
-WORKDIR /app
+# download Flutter SDK from Flutter Github repo
+RUN git clone https://github.com/flutter/flutter.git /usr/local/flutter
 
-# copy both 'package.json' and 'package-lock.json' (if available)
-COPY . .
+# Set flutter environment path
+ENV PATH="/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin:${PATH}"
 
-# install project dependencies
-RUN npm install
+# Run flutter doctor
+RUN flutter doctor
 
-# copy project files and folders to the current working directory (i.e. 'app' folder)
-COPY . .
+# Enable flutter web
+RUN flutter channel master
+RUN flutter upgrade
+RUN flutter config --enable-web
 
-EXPOSE 8080
-CMD [ "npm", "run", "serve"]
+# Copy files to container and build
+RUN mkdir /app/
+COPY . /app/
+WORKDIR /app/
+RUN flutter build web
+
+# Record the exposed port
+EXPOSE 5000
+
+# make server startup script executable and start the web server
+RUN ["chmod", "+x", "/app/server/server.sh"]
+
+ENTRYPOINT [ "/app/server/server.sh"]
