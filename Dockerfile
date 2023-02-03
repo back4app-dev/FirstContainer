@@ -6,4 +6,4 @@ WORKDIR /app/
 COPY . .
 
 EXPOSE 3000
-CMD ["serve", "web"]
+CMD ["serve", "sample-angular-app"]
