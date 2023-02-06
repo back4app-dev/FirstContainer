@@ -1,4 +1,4 @@
 # Install Operating system and dependencies
-FROM grafana:latest
+FROM grafana/grafana:latest
 
 EXPOSE 3000
