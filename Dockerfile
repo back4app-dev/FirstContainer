@@ -1,2 +1,2 @@
-FROM jenkins/jenkins
+FROM romainlecomte/lighthttpd-docker
 EXPOSE 8080
