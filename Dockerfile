@@ -1,4 +1,4 @@
 
 FROM jenkins/jenkins:lts
 
-EXPOSE 50000
+EXPOSE 8080
