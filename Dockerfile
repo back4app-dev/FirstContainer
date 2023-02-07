@@ -1,4 +1,4 @@
 
-FROM grafana/grafana:latest
+FROM jenkins/jenkins:lts
 
-EXPOSE 3000
+EXPOSE 8080
