@@ -1,2 +1,2 @@
-FROM portainer/portainer-ce
-EXPOSE 9443
+FROM jenkins:latest
+EXPOSE 8080
