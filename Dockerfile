@@ -1,4 +1,2 @@
-
-FROM jenkins/jenkins:lts
-
-EXPOSE 8080
+FROM portainer/portainer-ce
+EXPOSE 9443
