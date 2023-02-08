@@ -1,4 +1,4 @@
-FROM dockerfile/ubuntu
+FROM ubuntu:lts-alpine
 
 ADD rabbitmq-start /usr/local/bin/
 
