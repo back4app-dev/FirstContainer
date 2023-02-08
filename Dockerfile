@@ -1,3 +1,3 @@
-FROM redis:latest
+FROM django:latest
 
-EXPOSE 8001
+EXPOSE 8000
