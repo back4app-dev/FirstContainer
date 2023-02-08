@@ -1,3 +1,3 @@
-FROM django
+FROM eclipse-mosquitto
 
-EXPOSE 8000
+EXPOSE 9001
