@@ -1,4 +1,4 @@
-FROM ubuntu:lts-alpine
+FROM ubuntu
 
 ADD rabbitmq-start /usr/local/bin/
 
