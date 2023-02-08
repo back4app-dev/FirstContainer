@@ -1,3 +1,3 @@
-FROM django:latest
+FROM django
 
 EXPOSE 8000
