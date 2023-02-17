@@ -1,3 +1,2 @@
-FROM microsoft/nanoserver
-RUN dir c:\
+FROM microsoft/windowsservercore
 EXPOSE 80
