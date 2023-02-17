@@ -1,2 +1,3 @@
-FROM node:latest
-EXPOSE 80, 8080
+FROM microsoft/nanoserver
+RUN dir c:\
+EXPOSE 80
