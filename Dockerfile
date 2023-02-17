@@ -1,2 +1,2 @@
 FROM bulletinboard/bulletinboard
-EXPOSE 80
+EXPOSE 80, 8080
