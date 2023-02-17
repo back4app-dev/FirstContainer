@@ -1,2 +1,2 @@
-FROM bulletinboard/bulletinboard
+FROM node:latest
 EXPOSE 80, 8080
