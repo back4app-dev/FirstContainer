@@ -1,6 +1,6 @@
-FROM ubuntu:latest
+FROM alpine:latest
 
-RUN apt-get update && apt-get -y install lighttpd
+RUN apk update && apk add lighttpd
 
 RUN which lighttpd
 
