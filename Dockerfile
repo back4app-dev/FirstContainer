@@ -1,7 +1,7 @@
-FROM ubuntu:latest
+FROM alpine:latest
 
-RUN apt-get update && apt-get -y install nginx
+RUN apk update && apk add nginx
 COPY default /etc/nginx/sites-available/default
-EXPOSE 8080/tcp
+EXPOSE 80/tcp
 
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
