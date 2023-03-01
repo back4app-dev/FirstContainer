@@ -1,9 +1,8 @@
-FROM alpine:latest
+FROM ubuntu
 
-RUN apk update && apk add lighttpd
-
-RUN which lighttpd
-
-CMD ["lighttpd", "-D", "-f", "/etc/lighttpd/lighttpd.conf"]
+RUN apt-get update && apt-get -y install nginx
+COPY default /etc/nginx/sites-available/default
 
 EXPOSE 80
+
+CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
